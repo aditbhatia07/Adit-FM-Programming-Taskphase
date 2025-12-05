@@ -25,12 +25,7 @@ Product ID (integer)
 Product Name (string)
 Quantity (integer)
 Price (float)
-13. Write a C program to print equilateral triangle or Pyramid star pattern series of n rows using. For eg n=5.
-  *
- **
- ***
-****
-*****
+13. Write a C program to print equilateral triangle or Pyramid star pattern series of n rows using. 
 14. Write a program to read a file and count the number of characters, words, and lines in a file.
 15. Create a recursive function to find the nth term of the Fibonacci series.
 16. Implement a recursive function to compress a string by replacing consecutive duplicate characters with 
