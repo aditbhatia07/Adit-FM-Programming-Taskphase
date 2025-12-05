@@ -23,7 +23,7 @@ int main()
         break;
         }
     }
-    if (sum = 1 || sum == 0)
+    else if (sum = 1 || sum == 0)
     {
         printf("and neither prime nor composite.");
     }

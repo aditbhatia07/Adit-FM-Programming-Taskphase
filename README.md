@@ -2,7 +2,7 @@
 ## Pasting the tasks here for easier access:
 1. Write a program to determine if the sum of three user-input integers is even or odd as well as if the number is prime or composite.
 2. Create a program that converts seconds into hours, minutes, and remaining seconds.
-3. Create a program to calculate electricity bills based on usage slabs (e.g.if total units are 350 then 0–100 units: ₹5/unit, 101–300 units: ₹8/unit, ₹10/unit for units above 300, then total bill is of 350 units is 2900).
+3. Create a program to calculate electricity bills based on usage slabs (e.g.if total units are 350 then 0–100 units: ₹5/unit, 101–300 units: ₹8/unit, ₹10/unit for units above 300, then total bill is of 350 units is 2600).
 4. Create a program to simulate a simple login system with 3 attempts to enter the correct password.
 5. Create a program to remove all duplicates from an array of integers.
 6. Implement a program count the number of vowels and consonants in the given string as well as to scramble the characters of a string randomly.
