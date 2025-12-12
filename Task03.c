@@ -3,8 +3,22 @@
 int main()
 { 
     float u, bill;
-    printf("Enter total units consumed: ");
-    scanf("%f", &u);
+    int v = 0;
+    
+    while (!v)
+    {
+        printf("Enter total units consumed: ");
+        if (scanf("%f", &u) == 1)
+        {
+            v = 1;
+        }
+        else
+        {
+            printf("Invalid input! Please enter a valid number.\n");
+            while (getchar() != '\n');
+        }
+    }
+    // included this while loop to handle edge case where input is not a number
     if (u <= 100)
     {
         bill = u * 5;

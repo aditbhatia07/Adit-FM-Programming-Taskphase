@@ -2,9 +2,21 @@
 // Create a program to remove all duplicates from an array of integers.
 int main()
 {
-    int n, i, un;
-    printf("Enter number of integers in the array: ");
-    scanf("%d", &n);
+    int n, i, un, v = 0;
+    while (!v)
+    {
+        printf("Enter number of integers in the array: ");
+        if (scanf("%d", &n) == 1 && n >= 1)
+        {
+            v = 1;
+        }
+        else
+        {
+            printf("Please enter a positive integer (1 or above).\n");
+            while (getchar() != '\n');
+        }
+    }
+    // included this while loop to handle edge case where input is not a positive integer
     int arr[n];
     for (i = 0; i < n; i++)
     {

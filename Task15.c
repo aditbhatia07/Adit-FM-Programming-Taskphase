@@ -14,8 +14,19 @@ int fib(int n)
 }
 int main()
 {
-    int n;
-    printf("Enter the index of desired fibbonacci term: ");
-    scanf ("%d", &n);
+    int n, v = 0;
+    while (!v)
+    {
+        printf("Enter the index of desired fibbonacci term: ");
+        if (scanf("%d", &n) == 1 && n >= 0)
+        {
+            v = 1;
+        }
+        else
+        {
+            printf("Please enter a non-negative integer (0 or above).\n");
+            while (getchar() != '\n');
+        }
+    }
     printf("Desired number is: %d", fib(n));
 }

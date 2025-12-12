@@ -6,7 +6,7 @@
 //Implement a program count the number of vowels and consonants in the given string as well as to scramble the characters of a string randomly.
 void count(char *str)
 {
-    int vowels = 0, consonants = 0;
+    int vowels = 0, consonants = 0, digits = 0, symbols = 0, spaces = 0;
     for (int i = 0; str[i] != '\0'; i++)
     {
         char c = tolower(str[i]);
@@ -21,22 +21,56 @@ void count(char *str)
                 consonants++;
             }
         }
+        else if (isdigit(str[i]))
+        {
+            digits++;
+        }
+        else if (isspace(str[i]))
+        {
+            spaces++;
+        }
+        else
+        {
+            symbols++;
+        }
     }
     printf("Number of Vowels is: %d\n", vowels);
     printf("Number of Consonants is: %d\n", consonants);
+    printf("Number of Digits is: %d\n", digits);
+    printf("Number of Spaces is: %d\n", spaces);
+    printf("Number of Symbols/Special Characters is: %d\n", symbols);
+// counting digits, spaces and special characters too
 }
 void scramble(char *str)
 {
     int n = strlen(str);
+    char non_space[100];
+    int non_space_count = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (str[i] != ' ')
+        {
+            non_space[non_space_count++] = str[i];
+        }
+    }
     srand(time(0));
-    for (int i = n - 1; i > 0; i--)
+    for (int i = non_space_count - 1; i > 0; i--)
     {
         int j = rand() % (i + 1);
-        char temp = str[i];
-        str[i] = str[j];
-        str[j] = temp;
+        char temp = non_space[i];
+        non_space[i] = non_space[j];
+        non_space[j] = temp;
+    }
+    int index = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (str[i] != ' ')
+        {
+            str[i] = non_space[index++];
+        }
     }
 }
+//added this for loop to make sure spaces are not scrambled
 int main()
 {
     char str[100];

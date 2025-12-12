@@ -3,8 +3,22 @@
 int main()
 { 
     int a, b, c, sum, i=1;
-    printf("Enter three integers: ");
-    scanf("%d %d %d", &a, &b, &c);
+    int v = 0;
+    
+    while (!v)
+    {
+        printf("Enter three integers: ");
+        if (scanf("%d %d %d", &a, &b, &c) == 3)
+        {
+            v = 1;
+        }
+        else
+        {
+            printf("Invalid input! Please enter valid integers only.\n");
+            while (getchar() != '\n');
+        }
+    }
+// included this while loop to handle edge case where input is not an integer
     sum = a + b + c;
     printf ("\n Sum of integers=%d", sum);
     if ((sum % 2) == 0)
@@ -22,8 +36,9 @@ int main()
         printf("and composite.");
         break;
         }
+// the number's greatest integral divisor is the number divided by 2.
     }
-    else if (sum = 1 || sum == 0)
+    else if (sum == 1 || sum == 0)
     {
         printf("and neither prime nor composite.");
     }

@@ -3,7 +3,7 @@
 //Create a program to simulate a simple login system with 3 attempts to enter the correct password.
 int main ()
 {
-    char pw[50], in[50];
+    char pw[100], in[100];
     printf ("Create a Password without spaces and under 50 characters: ");
     scanf ("%s", pw);
     for (int i=1; i<=3; i++)

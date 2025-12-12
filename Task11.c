@@ -2,9 +2,20 @@
 // Implement Bubble sort or Selection sort on an array based on the input from the user and on the sorted array perform binary search algorithm to find an element
 int main()
 {
-    int n,in, temp, min, ele, h, l, mid;
-    printf("Enter number of elements in the array: ");
-    scanf("%d", &n);
+    int n,in, temp, min, ele, h, l, mid, v = 0;
+    while (!v)
+    {
+        printf("Enter number of elements in the array: ");
+        if (scanf("%d", &n) == 1 && n >= 1)
+        {
+            v = 1;
+        }
+        else
+        {
+            printf("Please enter a positive integer (1 or above).\n");
+            while (getchar() != '\n');
+        }
+    }
     int arr[n];
     for (int i = 0; i < n; i++)
     {

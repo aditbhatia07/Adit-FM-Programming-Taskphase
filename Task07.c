@@ -2,9 +2,21 @@
 //Write a program to find the second - largest element in an array using pointers.
 int main()
 {
-    int n, l, sl;
-    printf("Enter number of elements in the array: ");
-    scanf("%d", &n);
+    int n, l, sl, v = 0;
+    while (!v)
+    {
+        printf("Enter number of elements in the array: ");
+        if (scanf("%d", &n) == 1 && n >= 1)
+        {
+            v = 1;
+        }
+        else
+        {
+            printf("Please enter a positive integer (1 or above).\n");
+            while (getchar() != '\n');
+        }
+    }
+// included this while loop to handle edge case where input is not a positive integer
     int arr[n];
     int *ptr = arr;
     for (int i = 0; i < n; i++)

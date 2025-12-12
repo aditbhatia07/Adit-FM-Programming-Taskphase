@@ -13,35 +13,86 @@ struct list
 };
 int main()
 {
-    int n;
-    printf("Enter number of products: ");
-    scanf("%d", &n);
+    int n, v = 0;
+    while (!v)
+    {
+        printf("Enter number of products: ");
+        if (scanf("%d", &n) == 1 && n >= 1)
+        {
+            v = 1;
+        }
+        else
+        {
+            printf("Please enter a positive integer (1 or above).\n");
+            while (getchar() != '\n');
+        }
+    }
+    // included this while loop to handle edge case where input is not a positive integer
     struct list pro[n];
     for (int i = 0; i < n; i++)
     {
-        printf("\nEnter Product %d ID: ", i+1);
-        scanf("%d", &pro[i].pid);
-        printf("\nEnter Product %d Name: ", i+1);
+        printf("\nProduct %d:\n", i+1);
+        v = 0;
+        while (!v)
+        {
+            printf("Enter Product ID: ");
+            if (scanf("%d", &pro[i].pid) == 1)
+            {
+                v = 1;
+            }
+            else
+            {
+                printf("Please enter a valid integer.\n");
+                while (getchar() != '\n');
+            }
+        }
+        printf("Enter Product Name: ");
         scanf("%s", pro[i].name);
-        printf("\nEnter Product %d Quantity: ", i+1);
-        scanf("%d", &pro[i].quant);
-        printf("\nEnter Product %d Price: ", i+1);
-        scanf("%f", &pro[i].price);
+        v = 0;
+        while (!v)
+        {
+            printf("Enter Product Quantity: ");
+            if (scanf("%d", &pro[i].quant) == 1 && pro[i].quant >= 0)
+            {
+                v = 1;
+            }
+            else
+            {
+                printf("Please enter a non-negative integer.\n");
+                while (getchar() != '\n');
+            }
+        }
+        v = 0;
+        while (!v)
+        {
+            printf("Enter Product Price: ");
+            if (scanf("%f", &pro[i].price) == 1 && pro[i].price >= 0)
+            {
+                v = 1;
+            }
+            else
+            {
+                printf("Please enter a valid non-negative number.\n");
+                while (getchar() != '\n');
+            }
+        }
     }
-    printf("\nProduct Details:\n");
+    printf("\n\nProduct Details: \n");
     for (int i = 0; i < n; i++)
     {
-        printf("\nProduct %d ID: %d ", i+1, pro[i].pid);
-        printf("Product %d Name: %s ", i+1, pro[i].name);
-        printf("Product %d Quantity: %d ", i+1, pro[i].quant);
-        printf("Product %d Price: %f ", i + 1, pro[i].price);
+        printf("\nProduct %d:\n", i+1);
+        printf("  ID: %d\n", pro[i].pid);
+        printf("  Name: %s\n", pro[i].name);
+        printf("  Quantity: %d\n", pro[i].quant);
+        printf("  Price: ₹%.2f\n", pro[i].price);
     }
     float value=0;
     for (int i=0;i<n;i++)
     {
         value=value+(pro[i].quant*pro[i].price);
     }
-    printf("\nTotal value of the Inventory is: %f", value);
+    printf("\n\nProducts List: \n");
+    printf("Total Inventory Value: ₹%.2f\n", value);
     int hq=0, hp=0;
     for (int i=0;i<n;i++)
     {
@@ -54,14 +105,14 @@ int main()
             hp = i;
         }
     }
-    printf("\nProduct With Highest Quantity:\n");
-    printf("\nProduct ID: %d ", pro[hq].pid);
-    printf("Product Name: %s ", pro[hq].name);
-    printf("Product Quantity: %d ", pro[hq].quant);
-    printf("Product Price: %f \n", pro[hq].price);
-    printf("\nProduct With Highest Price:\n");
-    printf("\nProduct ID: %d ", pro[hp].pid);
-    printf("Product Name: %s ", pro[hp].name);
-    printf("Product Quantity: %d ", pro[hp].quant);
-    printf("Product Price: %f ", pro[hp].price);
+    printf("\nHighest Quantity Product: \n");
+    printf("  ID: %d\n", pro[hq].pid);
+    printf("  Name: %s\n", pro[hq].name);
+    printf("  Quantity: %d\n", pro[hq].quant);
+    printf("  Price: ₹%.2f\n", pro[hq].price);
+    printf("\nHighest Priced Product:\n");
+    printf("  ID: %d\n", pro[hp].pid);
+    printf("  Name: %s\n", pro[hp].name);
+    printf("  Quantity: %d\n", pro[hp].quant);
+    printf("  Price: ₹%.2f\n", pro[hp].price);
 }

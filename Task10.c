@@ -2,11 +2,34 @@
 // Write a Program to Rotate a matrix by 90 degrees in the clockwise direction in C.
 int main()
 {
-    int r,c;
-    printf("Enter Number of Rows in Matrix: ");
-    scanf("%d", &r);
-    printf("Enter Number of Columns in Matrix: ");
-    scanf("%d", &c);
+    int r,c, v = 0;
+    while (!v)
+    {
+        printf("Enter Number of Rows in Matrix: ");
+        if (scanf("%d", &r) == 1 && r >= 1)
+        {
+            v = 1;
+        }
+        else
+        {
+            printf("Please enter a positive integer (1 or above).\n");
+            while (getchar() != '\n');
+        }
+    }
+    v = 0;
+    while (!v)
+    {
+        printf("Enter Number of Columns in Matrix: ");
+        if (scanf("%d", &c) == 1 && c >= 1)
+        {
+            v = 1;
+        }
+        else
+        {
+            printf("Please enter a positive integer (1 or above).\n");
+            while (getchar() != '\n');
+        }
+    }
     int mat[r][c];
     for (int i = 0; i < r; i++)
     {
