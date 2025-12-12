@@ -1,6 +1,6 @@
 #include <stdio.h>
 // Create a program to remove all duplicates from an array of integers.
-int main(void)
+int main()
 {
     int n, i, un;
     printf("Enter number of integers in the array: ");
