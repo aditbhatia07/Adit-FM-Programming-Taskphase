@@ -39,7 +39,6 @@ void count(char *str)
     printf("Number of Digits is: %d\n", digits);
     printf("Number of Spaces is: %d\n", spaces);
     printf("Number of Symbols/Special Characters is: %d\n", symbols);
-// counting digits, spaces and special characters too
 }
 void scramble(char *str)
 {
@@ -70,7 +69,6 @@ void scramble(char *str)
         }
     }
 }
-//added this for loop to make sure spaces are not scrambled
 int main()
 {
     char str[100];

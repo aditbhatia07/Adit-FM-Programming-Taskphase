@@ -19,8 +19,20 @@ int main()
     int arr[n];
     for (int i = 0; i < n; i++)
     {
-        printf("\nEnter element of the array at position %d: ", i + 1);
-        scanf("%d", &arr[i]);
+        v = 0;
+        while (!v)
+        {
+            printf("\nEnter element of the array at position %d: ", i + 1);
+            if (scanf("%d", &arr[i]) == 1)
+            {
+                v = 1;
+            }
+            else
+            {
+                printf("Please enter an integer.\n");
+                while (getchar() != '\n');
+            }
+        }
     }
     printf("\nEntered array is: ");
     for (int i = 0; i < n; i++)
@@ -82,7 +94,7 @@ int main()
         mid=(l+h)/2;
         if (arr[mid]==ele)
         {
-            printf("%d is the %dth element of the array.", ele, mid+1);
+            printf("\n%d is at position %d of the array.", ele, mid+1);
             break;
         }
         else if(ele>arr[mid])

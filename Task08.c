@@ -16,13 +16,24 @@ int main ()
             while (getchar() != '\n');
         }
     }
-// included this while loop to handle edge case where input is not a positive integer
     int arr[n];
     int *ptr = arr;
     for (int i = 0; i < n; i++)
     {
-        printf("\nEnter element of the array at position %d: ", i + 1);
-        scanf("%d", (ptr + i));
+        v = 0;
+        while (!v)
+        {
+            printf("\nEnter element of the array at position %d: ", i + 1);
+            if (scanf("%d", (ptr + i)) == 1)
+            {
+                v = 1;
+            }
+            else
+            {
+                printf("Please enter valid integers only.\n");
+                while (getchar() != '\n');
+            }
+        }
     }
     printf("\nArray is: ");
     for (int i = 0; i < n; i++)

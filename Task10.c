@@ -35,8 +35,20 @@ int main()
     {
         for (int j = 0; j < c; j++)
         {
-            printf("Enter element of matrix at position (%d,%d)", i + 1, j + 1);
-            scanf("%d", &mat[i][j]);
+            v=0;
+            while (!v)
+            {
+                printf("Enter element of matrix at position (%d,%d)", i + 1, j + 1);
+                if (scanf("%d", &mat[i][j]) == 1)
+                {
+                    v = 1;
+                }
+                else
+                {
+                    printf("Please enter valid integers only.\n");
+                    while (getchar() != '\n');
+                }
+            }
         }
     }
     printf("Entered Matrix is: \n");

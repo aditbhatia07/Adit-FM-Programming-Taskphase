@@ -13,15 +13,27 @@ int main()
         else
         {
             printf("Please enter a positive integer (1 or above).\n");
-            while (getchar() != '\n');
+            while (getchar() != '\n')
+                ;
         }
     }
-    // included this while loop to handle edge case where input is not a positive integer
     int arr[n];
     for (i = 0; i < n; i++)
     {
-        printf("\nEnter element of the array at position %d: ", i + 1);
-        scanf("%d", &arr[i]);
+        v = 0;
+        while (!v)
+        {
+            printf("\nEnter element of the array at position %d: ", i + 1);
+            if (scanf("%d", &arr[i]) == 1)
+            {
+                v = 1;
+            }
+            else
+            {
+                printf("Please enter an integer.\n");
+                while (getchar() != '\n');
+            }
+        }
     }
     printf("\nArray is: ");
     for (i = 0; i < n; i++)

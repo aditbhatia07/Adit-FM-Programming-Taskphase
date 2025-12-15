@@ -8,13 +8,13 @@ int main()
     while (!v)
     {
         printf("Enter total units consumed: ");
-        if (scanf("%f", &u) == 1)
+        if (scanf("%f", &u) == 1 && u>=0)
         {
             v = 1;
         }
         else
         {
-            printf("Invalid input! Please enter a valid number.\n");
+            printf("Please enter a valid number.\n");
             while (getchar() != '\n');
         }
     }
@@ -31,5 +31,5 @@ int main()
     {
         bill = (100 * 5) + (200 * 8) + ((u - 300) * 10);
     }
-    printf("Total electricity bill is ₹ %f ", bill);
+    printf("Total electricity bill is ₹ %.2f ", bill);
 }

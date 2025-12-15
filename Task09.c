@@ -2,13 +2,25 @@
 //Take each element of the 4x4 matrix from the user and print it, then add each element from the 4x4 matrix and print the sum, print the sum of both the diagonals
 int main()
 {
-    int matrix[4][4], sum=0, d1=0, d2=0;
+    int matrix[4][4], sum=0, d1=0, d2=0, v=0;
     for (int i=0; i<4; i++)
     {
         for (int j=0; j<4;j++)
         {
-            printf("Enter element of matrix at position (%d,%d)", i+1,j+1);
-            scanf("%d", &matrix[i][j]);
+            v=0;
+            while (!v)
+            {
+                printf("Enter element of matrix at position (%d,%d)", i+1,j+1);
+                if (scanf("%d", &matrix[i][j]) == 1)
+                {
+                    v=1;
+                }
+                else
+                {
+                    printf("Please enter valid integers only.\n");
+                    while (getchar() != '\n');
+                }
+            }
         }
     }
     printf("Entered matrix is:\n");

@@ -1,23 +1,25 @@
 #include <stdio.h>
 #include <string.h>
-//Create a program to simulate a simple login system with 3 attempts to enter the correct password.
-int main ()
+// Create a program to simulate a simple login system with 3 attempts to enter the correct password.
+int main()
 {
     char pw[100], in[100];
-    printf ("Create a Password without spaces and under 50 characters: ");
-    scanf ("%s", pw);
-    for (int i=1; i<=3; i++)
+    printf("Create a password under 100 characters: ");
+    fgets(pw, 100, stdin);
+    pw[strcspn(pw, "\n")] = '\0';
+    for (int i = 1; i <= 3; i++)
     {
-        printf ("\n Attempt %d, Enter Password: ", i);
-        scanf ("%s", in);
-        if (strcmp(in, pw) ==0)
+        printf("\nAttempt %d, Enter Password: ", i);
+        fgets(in, 100, stdin);
+        in[strcspn(in, "\n")] = '\0';
+        if (strcmp(in, pw) == 0)
         {
-            printf("\n Password is correct.");
+            printf("\nPassword is correct.");
             break;
         }
-        else 
+        else
         {
-            printf("\n Password is incorrect, %d tries left ", 3-i);
+            printf("\nPassword is incorrect, %d tries left", 3 - i);
         }
     }
 }
